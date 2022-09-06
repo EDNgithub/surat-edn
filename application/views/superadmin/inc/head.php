@@ -25,4 +25,13 @@
   <link rel="stylesheet" href="<?= base_url(); ?>/asset/admin/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link href="<?= base_url(); ?>/asset/admin/dist/img/EDN.png" rel="icon">
+
+
+    <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/asset/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>/asset/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>/asset/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+  
 </head>

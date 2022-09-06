@@ -43,7 +43,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?php echo site_url('C_superadmin/index')?>" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
               Home
@@ -52,7 +52,7 @@
           </li>
           <li class="nav-header">Data Master</li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?php echo site_url('C_superadmin/user')?>" class="nav-link">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
               Data User
@@ -60,17 +60,26 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?php echo site_url('C_superadmin/divisi')?>" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
               <p>
               Data Divisi
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?php echo site_url('C_superadmin/jabatan')?>" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+              Data Jabatan
+              </p>
+            </a>
+          </li>
+          
           <li class="nav-header">Surat Masuk</li>
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-envelope"></i>
               <p>
               Surat Divisi
               </p>
@@ -79,7 +88,7 @@
           <li class="nav-header">Control</li>
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-question-circle"></i>
               <p>
               FAQ
               </p>
@@ -87,7 +96,7 @@
           </li>
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-times-circle"></i>
               <p>
               Logout
               </p>
