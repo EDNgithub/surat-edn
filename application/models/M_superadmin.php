@@ -11,6 +11,10 @@ class M_superadmin extends CI_Model{
 	function tampil_data_user(){
 		return $this->db->get('user');
 	}
+	function tampil_data_surat(){
+		return $this->db->get('surat');
+	}
+	
 	function input_data($data,$table){
 		$this->db->insert($table,$data);
 	}

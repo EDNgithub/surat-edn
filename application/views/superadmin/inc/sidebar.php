@@ -78,7 +78,7 @@
           
           <li class="nav-header">Surat Masuk</li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="<?php echo site_url('C_superadmin/surat')?>" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
               Surat Divisi

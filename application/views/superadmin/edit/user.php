@@ -30,29 +30,31 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?php echo site_url('C_superadmin/simpan_user')?>" method="post">
+              <?php foreach($user as $u){ ?>
+              <form action="<?php echo site_url('C_superadmin/update_data_user')?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
+                    <input type="hidden" name="id_user" value="<?php echo $u->id_user ?>" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username">
+                    <input type="text" name="username" value="<?php echo $u->username ?>" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Username">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Nama Lengkap">
+                    <input type="text" name="nama_lengkap" value="<?php echo $u->nama_lengkap ?>" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Nama Lengkap">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Masukkan Password">
-                    <input type="checkbox" onclick="myFunction()">Tampilkan Password
+                    <input type="password" name="password" value="<?php echo $u->password ?>" class="form-control" id="inputPassword" placeholder="Masukkan Password">
+                    <input type="checkbox" onclick="myFunction()"> Tampilkan Password
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="text" name="email" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
+                    <input type="text" name="email" value="<?php echo $u->email ?>" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Email">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Role</label>
                     <select name="level" class="form-control select2" style="width: 100%;">
-                        <option value="user" selected="selected">-------------------------SIlahkan Pilih Role-------------------------</option>
+                        <option value="<?php echo $u->level ?>" selected="selected"><?php echo $u->level ?></option>
                         <option value="user">User</option>
                         <option value="admin">Admin Divisi</option>
                         <option value="koordinator">Koordinator</option>
@@ -62,11 +64,12 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Divisi</label>
                     <select name="divsi" class="form-control select2" style="width: 100%;">
-                        <option selected="selected">-------------------------SIlahkan Pilih Divisi-------------------------</option>
+                        <option value="<?php echo $u->divsi ?>" selected="selected"><?php echo $u->divsi ?></option>
+                        <option>-------------------------SIlahkan Pilih Divisi-------------------------</option>
                             <?php                                
                                   foreach ($user2 as $row) 
                                   {  
-                                  echo "<option value='".$row->id_divisi."'>".$row->divisi."</option>";
+                                  echo "<option value='".$row->id_divisi."'>".$row->id_divisi."->".$row->divisi."</option>";
                                   }
                             ?>
                     </select>
@@ -74,21 +77,22 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jabatan</label>
                     <select name="jabatan" class="form-control select2" style="width: 100%;">
-                        <option selected="selected">-------------------------SIlahkan Pilih Jabatan-------------------------</option>
+                        <option value="<?php echo $u->jabatan ?>" selected="selected"><?php echo $u->jabatan ?></option>
+                        <option>-------------------------SIlahkan Pilih Jabatan-------------------------</option>
                             <?php                                
                                   foreach ($user3 as $row) {  
-                                  echo "<option value='".$row->id_jabatan."'>".$row->jabatan."</option>";
+                                  echo "<option value='".$row->id_jabatan."'>".$row->id_jabatan."->".$row->jabatan."</option>";
                                   }
                             ?>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Alamat</label>
-                    <input type="text" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Alamat">
+                    <input type="text" name="alamat" value="<?php echo $u->alamat ?>" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Alamat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">No Telpon/Hp</label>
-                    <input type="text" name="no_telpon" class="form-control" id="exampleInputPassword1" onkeypress="return event.charCode >= 48 && event.charCode <=57" placeholder="Masukkan No Telpom/Hp">
+                    <input type="text" name="no_telpon" value="<?php echo $u->no_telpon ?>" class="form-control" id="exampleInputPassword1" onkeypress="return event.charCode >= 48 && event.charCode <=57" placeholder="Masukkan No Telpom/Hp">
                   </div>
                   
                 </div>
@@ -98,6 +102,7 @@
                   <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
               </form>
+              <?php } ?>
             </div>
             <!-- /.card -->
         </div>

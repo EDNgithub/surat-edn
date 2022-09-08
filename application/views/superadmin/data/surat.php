@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data User</h1>
+            <h1>Data Surat</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data User</li>
+              <li class="breadcrumb-item active">Data Surat</li>
             </ol>
           </div>
         </div>
@@ -24,8 +24,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <a href="<?php echo site_url('C_superadmin/tambah_user')?>"><button type="button" class="btn btn-block btn-primary"><i class="fas fa-file-import"> </i>
-                    Tambah Data User</button></a>
+                <h3>Surat Dikirim</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -33,46 +32,44 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Divisi</th>
-                    <th>Jabatan</th>
-                    <th>Alamat</th>
-                    <th>No Hendpone</th>
+                    <th>Tanggal Pengiriman Surat</th>
+                    <th>Sifat Surat</th>
+                    <th>Tujuan Surat</th>
+                    <th>Judul Surat</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php $i=0; foreach($user as $u){ echo ''; $i++; ?>
+                  <?php $i=0; foreach($user as $u){ echo ''; $i++; ?> 
                   <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $u->username ?></td>
-                    <td><?php echo $u->email ?></td>
-                    <td><?php echo $u->divisi ?></td>
-                    <td><?php echo $u->jabatan ?></td>
-                    <td><?php echo $u->alamat ?></td>
-                    <td><?php echo $u->no_telpon ?></td>
+                    <td><?php echo $u->tanggal_kirim_surat ?></td>
+                    <td><?php echo $u->sifat_surat ?></td>
+                    <td><?php echo $u->tujuan ?></td>
+                    <td><?php echo $u->judul_surat ?></td>
+                    <td><?php echo $u->status ?></td>
                     <td>
-                      <a href="<?php echo site_url('C_superadmin/edit_user/'.$u->id_user);?>" class="btn btn-primary">
+                      <a href="<?php echo site_url('C_superadmin/edit_surat/'.$u->id_surat);?>" class="btn btn-primary">
                               <i class="fas fa-pencil-alt">
                               </i>
                       </a>
-                      <a class="btn btn-danger" href="<?php echo site_url('C_superadmin/hapus_user/'.$u->id_user);?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
+                      <a class="btn btn-danger" href="<?php echo site_url('C_superadmin/hapus_surat/'.$u->id_surat);?>" onclick="return confirm('Anda yakin mau menghapus item ini ?')">
                               <i class="fas fa-trash">
                               </i>
-                      </a></td>
+                      </a>
+                    </td>
                   </tr>
                   <?php } ?>
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Divisi</th>
-                    <th>Jabatan</th>
-                    <th>Alamat</th>
-                    <th>No Hendpone</th>
+                    <th>Tanggal Pengiriman Surat</th>
+                    <th>Sifat Surat</th>
+                    <th>Tujuan Surat</th>
+                    <th>Judul Surat</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

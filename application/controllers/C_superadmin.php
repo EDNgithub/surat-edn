@@ -68,7 +68,77 @@ class C_superadmin extends CI_Controller {
 		redirect("C_login");
 	}	
 	}
+
+	function hapus_user($id_user){
+
+	if($this->M_login->logged_id2() == 'superadmin')
+	{
+	$where = array('id_user' => $id_user);
+	$this->M_superadmin->hapus_data($where,'user');
+	redirect('C_superadmin/user');
+	}
+	else
+	{
+		redirect("C_login");
+	}	
+	}
 	
+	function edit_user($id_user){
+			if($this->M_login->logged_id2() == 'superadmin')
+	{		
+		$where = array('id_user' => $id_user);
+		$data['user2'] = $this->M_superadmin->tampil_data_divisi()->result();
+		$data['user3'] = $this->M_superadmin->tampil_data_jabatan()->result();
+		$data['user'] = $this->M_superadmin->edit_data($where,'user')->result();
+		$this->load->view('superadmin/inc/head');
+		$this->load->view('superadmin/inc/sidebar');
+		$this->load->view('superadmin/edit/user',$data);
+		$this->load->view('superadmin/inc/footer');
+	}
+	else
+	{
+		redirect("C_login");
+	}
+	}
+
+	function update_data_user()
+	{
+			if($this->M_login->logged_id2() == 'superadmin')
+		{
+			$id_user = $this->input->post('id_user');
+			$username = $this->input->post('username');
+			$nama_lengkap = $this->input->post('nama_lengkap');
+			$password = $this->input->post('password');
+			$email = $this->input->post('email');
+			$level = $this->input->post('level');
+			$divsi = $this->input->post('divsi');
+			$jabatan = $this->input->post('jabatan');
+			$alamat = $this->input->post('alamat');
+			$no_telpon = $this->input->post('no_telpon');
+			$data = array(
+			//'id_user' => $id_user,
+			'username' => $username,
+			'nama_lengkap' => $nama_lengkap,
+			'password' => $password,
+			'email' => $email,
+			'level' => $level,
+			'divsi' => $divsi,
+			'jabatan' => $jabatan,
+			'alamat' => $alamat,
+			'no_telpon' => $no_telpon
+					);
+			$where = array(
+				'id_user' => $id_user
+			);
+			$this->M_superadmin->update_data($where,$data,'user');
+			redirect('C_superadmin/user');
+		}
+		else
+		{
+			redirect("C_login");
+		}
+	}
+
 /*Divisi*/
 	public function divisi()
 	{
@@ -252,5 +322,15 @@ class C_superadmin extends CI_Controller {
 	{
 		redirect("C_login");
 	}	
+	}
+
+	/*Surat*/
+	public function surat()
+	{
+		$data['user'] = $this->M_superadmin->tampil_data_surat()->result();
+		$this->load->view('superadmin/inc/head');
+		$this->load->view('superadmin/inc/sidebar');
+		$this->load->view('superadmin/data/surat',$data);
+		$this->load->view('superadmin/inc/footer');
 	}
 }
