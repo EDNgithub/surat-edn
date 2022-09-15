@@ -20,6 +20,8 @@ class C_login extends CI_Controller {
                             redirect('C_admin');
                         }elseif($this->session->userdata("level") == "superadmin"){
                             redirect('C_superadmin');
+                        }elseif($this->session->userdata("level") == "koordinator"){
+                            redirect('C_koordinator');
                         }else{
                            $data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
                         <div class="header"><b><i class="fa fa-exclamation-circle"></i> ERROR</b> username atau password salah!</div></div>';
@@ -50,11 +52,17 @@ class C_login extends CI_Controller {
                 if ($query != FALSE) {
                     foreach ($query as $k) {
                         $data = array(
+                            
                             'id_user'   => $k->id_user,
                             'username' => $k->username,
+                            'nama_lengkap' => $k->nama_lengkap,
                             'password' => $k->password,
                             'email' => $k->email,
-                            'level' => $k->level
+                            'level' => $k->level,
+                            'divsi' => $k->divsi,
+                            'jabatan' => $k->jabatan,
+                            'alamat' => $k->alamat,
+                            'no_telpon' => $k->no_telpon
                         );
                         //set session userdata
                         $this->session->set_userdata($data);
@@ -66,6 +74,8 @@ class C_login extends CI_Controller {
                             redirect('C_admin');
                         }elseif($this->session->userdata("level") == "superadmin"){
                             redirect('C_superadmin');
+                        }elseif($this->session->userdata("level") == "koordinator"){
+                            redirect('C_koordinator');
                         }else{
                            $data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
                         <div class="header"><b><i class="fa fa-exclamation-circle"></i> ERROR</b> username atau password salah!</div></div>';

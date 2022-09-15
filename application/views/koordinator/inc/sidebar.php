@@ -52,36 +52,19 @@
           </li>
           <li class="nav-header">Data Master</li>
           <li class="nav-item">
-            <a href="<?php echo site_url('C_superadmin/user')?>" class="nav-link">
+            <a href="<?php echo site_url('C_koordinator/user')?>" class="nav-link">
               <i class="nav-icon fas fa-user-plus"></i>
               <p>
-              Data User
+              List Surat
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo site_url('C_superadmin/divisi')?>" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
-              <p>
-              Data Divisi
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo site_url('C_superadmin/jabatan')?>" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-              Data Jabatan
-              </p>
-            </a>
-          </li>
-          
+          </li>          
           <li class="nav-header">Surat Masuk</li>
           <li class="nav-item">
-            <a href="<?php echo site_url('C_superadmin/surat')?>" class="nav-link">
+            <a href="<?php echo site_url('C_koordinator/surat')?>" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-              Surat Divisi
+              Surat
               </p>
             </a>
           </li>

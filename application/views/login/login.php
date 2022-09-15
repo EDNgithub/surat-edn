@@ -35,13 +35,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
+        <input type="checkbox" onclick="myFunction()">Tampilkan Password
         <div class="row">
           <div class="col-8">
           </div>
@@ -65,5 +66,17 @@
 <script src="<?= base_url(); ?>/asset/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url(); ?>/asset/admin/dist/js/adminlte.min.js"></script>
+
+      <script>
+        function myFunction() {
+            var x = document.getElementById("inputPassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
+
